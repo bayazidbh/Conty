@@ -7,14 +7,13 @@
 
 # Package groups
 audio_pkgs="alsa-lib lib32-alsa-lib alsa-plugins lib32-alsa-plugins libpulse \
-	lib32-libpulse jack2 lib32-jack2 alsa-tools alsa-utils pipewire lib32-pipewire"
+	lib32-libpulse jack2 lib32-jack2 alsa-tools alsa-utils pipewire lib32-pipewire wireplumber"
 
 video_pkgs="mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon \
-	vulkan-intel lib32-vulkan-intel nvidia-utils lib32-nvidia-utils \
 	vulkan-icd-loader lib32-vulkan-icd-loader vulkan-mesa-layers \
 	lib32-vulkan-mesa-layers libva-mesa-driver lib32-libva-mesa-driver \
-	libva-intel-driver lib32-libva-intel-driver intel-media-driver \
-	mesa-utils vulkan-tools nvidia-prime libva-utils lib32-mesa-utils"
+	mesa-utils vulkan-tools libva-utils lib32-mesa-utils"
+# 	rocm-hip-sdk rocm-opencl-sdk"
 
 wine_pkgs="wine-tkg-staging-fsync-git winetricks-git wine-nine wineasio \
 	giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap \
@@ -22,33 +21,48 @@ wine_pkgs="wine-tkg-staging-fsync-git winetricks-git wine-nine wineasio \
 	v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins \
 	lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo \
 	lib32-libjpeg-turbo libxcomposite lib32-libxcomposite libxinerama \
-	lib32-libxinerama libxslt lib32-libxslt libva lib32-libva gtk3 \
+	lib32-libxinerama libxslt lib32-libxslt libva lib32-libva gtk3-classic \
 	lib32-gtk3 vulkan-icd-loader lib32-vulkan-icd-loader sdl2 lib32-sdl2 \
 	vkd3d lib32-vkd3d libgphoto2 ffmpeg gst-plugins-good gst-plugins-bad \
 	gst-plugins-ugly gst-plugins-base lib32-gst-plugins-good \
 	lib32-gst-plugins-base gst-libav wget faudio lib32-faudio"
 
-devel_pkgs="base-devel git meson mingw-w64-gcc cmake"
+devel_pkgs="base-devel git nano"
 
 # Packages to install
 # You can add packages that you want and remove packages that you don't need
 # Apart from packages from the official Arch repos, you can also specify
 # packages from the Chaotic-AUR repo
 export packagelist="${audio_pkgs} ${video_pkgs} ${wine_pkgs} ${devel_pkgs} \
-	nano ttf-dejavu ttf-liberation lutris steam firefox mpv geany pcmanfm \
-	htop qbittorrent speedcrunch gpicview file-roller xorg-xwayland \
-	steam-native-runtime gamemode lib32-gamemode jre17-openjdk lxterminal \
-	steamtinkerlaunch mangohud lib32-mangohud qt6-wayland wayland \
-	lib32-wayland qt5-wayland retroarch xorg-server-xephyr openbox \
-	obs-studio gamehub minigalaxy legendary gamescope prismlauncher yt-dlp \
-	bottles playonlinux minizip retroarch-assets-ozone libretro-beetle-psx-hw \
-	libretro-blastem libretro-bsnes libretro-dolphin libretro-duckstation \
-	libretro-gambatte libretro-melonds libretro-mgba libretro-nestopia \
-	libretro-parallel-n64 libretro-pcsx2 libretro-picodrive libretro-ppsspp \
-	libretro-retrodream libretro-yabause sunshine"
+	zsh fish lxterminal htop minizip \
+	eza bat aria2 wget wl-clipboard sqlitebrowser \
+	xorg-server-xephyr xorg-xwayland wayland lib32-wayland \
+	qt5-wayland qt6-wayland libdbusmenu-qt5 libdbusmenu-qt6 \
+	libdbusmenu-gtk3 libdbusmenu-gtk2 appmenu-gtk-module \
+	ttf-meslo-nerd-font-powerlevel10k ttf-ibm-plex ttf-ms-fonts  \
+	whitesur-kde-theme-git whitesur-icon-theme-git whitesur-cursor-theme-git \
+	whitesur-gtk-theme-git adwaita-icon-theme \
+	steam steam-native-runtime protontricks-git \
+	xdg-desktop-portal-kde plasma-browser-integration \
+	peazip-qt5 p7zip unrar unarchiver lzop lrzip arj \
+	spotify-adblock-git qtscrcpy scrcpy \
+	masterpdfeditor-free exifcleaner-bin \
+	teams-for-linux onedrive-abraunegg onedrivegui onedriver \
+	gamemode lib32-gamemode mangohud-git lib32-mangohud-git \
+	bottles itch-setup-bin lutris anime-games-launcher-bin \
+	pcsx2-git ppsspp rpcs3-git duckstation-git vita3k-avx-git \
+	melonds-git ryujinx-git yuzu-early-access citra-canary-git \
+	gimp-git curtail anydesk-bin vlc-wayland-git \
+	firejail firetools discord discord-rpc-git \
+	rustdesk-nightly tesseract-data-eng tesseract-data-ind tesseract-data-jpn tesseract-data-jpn_vert"
 
 # If you want to install AUR packages, specify them in this variable
-export aur_packagelist=""
+export aur_packagelist=" \
+	gamescope-plus wine-ge-custom-opt \
+	monterey-kde-theme-git \
+	thorium-browser-bin junction sgdboop-bin \
+	thcrap-steam-proton-wrapper-git \
+	obs-studio-amf mpv-discordrpc mpv-discord-git 4kvideodownloaderplus"
 
 # ALHP is a repository containing packages from the official Arch Linux
 # repos recompiled with -O3, LTO and optimizations for modern CPUs for
