@@ -19,7 +19,7 @@ This is an easy to use compressed unprivileged Linux container packed into a sin
 * Supports filesystem and X11 sandboxing (thanks to bubblewrap and xephyr).
 * Supports Chaotic-AUR and ALHP repositories. AUR is also supported.
 
-In its default release, it includes, among others, these apps: `Wine-GE, Steam, Lutris, PlayOnLinux, GameHub, Minigalaxy, Legendary, Bottles, MultiMC, MangoHud, Gamescope, RetroArch, Sunshine, OBS Studio, OpenJDK, Firefox`. The full list can be read in the [latest release's pkg_list.txt](https://github.com/Kron4ek/Conty/releases/latest/download/pkg_list.txt).
+In its default release, it includes, among others, these apps: `Wine-Proton, Steam, Lutris, PlayOnLinux, GameHub, Minigalaxy, Legendary, Bottles, PrismLauncher, MangoHud, Gamescope, RetroArch, Sunshine, OBS Studio, OpenJDK, Firefox`. The full list can be read in the [latest release's pkg_list.txt](https://github.com/Kron4ek/Conty/releases/latest/download/pkg_list.txt).
 
 If these applications are not enough, you can install additional applications or run external binaries from, for example, your home directory.
 
@@ -460,7 +460,7 @@ If you just want a sandboxing functionality but don't need a container with a fu
 
 ### About Wine
 
-Conty releases from the releases page include `Wine-GE`, and if you build your own Conty you will get `Wine-Staging` by default (but you can change that).
+Conty releases from the releases page include `Wine-Proton`, and if you build your own Conty you will get `Wine-Staging` by default (but you can change that).
 
 As for prefix management, it's the same as with any other Wine build, the container does not affect it. The default prefix is `~/.wine`, but you can specify a custom prefix path with the `WINEPREFIX` environment variable.
 
