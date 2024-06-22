@@ -15,7 +15,7 @@ video_pkgs="mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon \
 	mesa-utils vulkan-tools libva-utils lib32-mesa-utils"
 # 	rocm-hip-sdk rocm-opencl-sdk"
 
-wine_pkgs="wine-tkg-staging-fsync-git winetricks-git wine-nine wineasio \
+wine_pkgs="wine-staging winetricks-git wine-nine wineasio \
 	giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap \
 	gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal \
 	v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins \
@@ -186,7 +186,7 @@ install_aur_packages () {
 	fi
 
 	for i in {1..10}; do
-		if yay --needed --noconfirm --removemake --nocleanmenu --nodiffmenu --builddir /home/aur -a -S ${aur_pkgs}; then
+		if yay --needed --noconfirm --removemake --builddir /home/aur -a -S ${aur_pkgs}; then
 			break
 		fi
 	done
@@ -224,16 +224,16 @@ EOF
 
 generate_mirrorlist () {
 	cat <<EOF > mirrorlist
+Server = https://mirror1.sl-chat.ru/archlinux/\$repo/os/\$arch
 Server = https://mirror3.sl-chat.ru/archlinux/\$repo/os/\$arch
+Server = https://us.mirrors.cicku.me/archlinux/\$repo/os/\$arch
 Server = https://mirror.osbeck.com/archlinux/\$repo/os/\$arch
-Server = https://mirror.f4st.host/archlinux/\$repo/os/\$arch
-Server = https://europe.mirror.pkgbuild.com/\$repo/os/\$arch
-Server = https://archlinux.thaller.ws/\$repo/os/\$arch
-Server = https://mirror.moson.org/arch/\$repo/os/\$arch
 Server = https://md.mirrors.hacktegic.com/archlinux/\$repo/os/\$arch
-Server = https://mirror.tux.si/arch/\$repo/os/\$arch
-Server = https://arch.jensgutermuth.de/\$repo/os/\$arch
 Server = https://geo.mirror.pkgbuild.com/\$repo/os/\$arch
+Server = https://mirror.qctronics.com/archlinux/\$repo/os/\$arch
+Server = https://arch.mirror.constant.com/\$repo/os/\$arch
+Server = https://america.mirror.pkgbuild.com/\$repo/os/\$arch
+Server = https://mirror.tmmworkshop.com/archlinux/\$repo/os/\$arch
 EOF
 }
 
